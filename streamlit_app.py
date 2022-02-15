@@ -3,6 +3,7 @@ import altair as alt
 import math
 import pandas as pd
 import streamlit as st
+from pathlib import Path
 
 """
 # Welcome to Streamlit!
@@ -14,7 +15,7 @@ forums](https://discuss.streamlit.io).
 
 In the meantime, below is an example of what you can do with just a few lines of code:
 """
-DATA_URL = "https://static.usafacts.org/public/data/covid-19/covid_deaths_usafacts.csv"
+DATA_URL = Path(__file__).parents[1] / "https://static.usafacts.org/public/data/covid-19/covid_deaths_usafacts.csv"
 df = pd.read_csv(DATA_URL)
 st.write(df)
 
